@@ -18,7 +18,9 @@ def create_app():
 
 def set_config(app):
     # TODO: set config from file (support different environments)
-    app.config['SECRET_KEY'] = environ.get('SHOUTOUT_SECRET_KEY', '')
+    app.config['SECRET_KEY'] = environ['SHOUTOUT_SECRET_KEY']
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # To suppress flask warning for new default
 
 def init_extensions(app):
     db.init_app(app)
