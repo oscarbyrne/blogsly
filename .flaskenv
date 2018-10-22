@@ -1,1 +1,2 @@
 FLASK_APP=blogsly
+FLASK_ENV=production
