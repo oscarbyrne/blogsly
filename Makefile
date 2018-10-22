@@ -15,7 +15,7 @@
 #
 REGISTRY_HOST=docker.io
 USERNAME=$(USER)
-NAME=$(shell basename $(CURDIR))
+NAME=blogsly
 
 RELEASE_SUPPORT := $(shell dirname $(abspath $(lastword $(MAKEFILE_LIST))))/.make-release-support
 IMAGE=$(REGISTRY_HOST)/$(USERNAME)/$(NAME)
@@ -113,3 +113,7 @@ check-status:
 check-release: .release
 	@. $(RELEASE_SUPPORT) ; tagExists $(TAG) || (echo "ERROR: version not yet tagged in git. make [minor,major,patch]-release." >&2 && exit 1) ;
 	@. $(RELEASE_SUPPORT) ; ! differsFromRelease $(TAG) || (echo "ERROR: current directory differs from tagged $(TAG). make [minor,major,patch]-release." ; exit 1)
+
+
+run:
+	docker run -d -p 5000:5000 $(IMAGE):latest
