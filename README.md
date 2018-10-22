@@ -12,6 +12,7 @@ simple blogging api with flask
 ### Deployment
 
 ```bash
+echo BLOGSLY_SECRET_KEY=$YOURSECRETPHRASE > .env
 make build
 make run
 ```
