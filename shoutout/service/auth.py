@@ -1,10 +1,12 @@
-from shoutout.model.user import User
+from flask_jwt_extended import create_access_token
+
+from shoutout import model
 from shoutout.extensions import db
-from shoutout.schema.auth import UserAuth
+from shoutout import schema
 
 
 def register(username, password):
-    user = User(
+    user = model.User(
         username=username,
         password=password
     )
@@ -13,8 +15,10 @@ def register(username, password):
     return login(username, password)
 
 def login(username, password):
-    user = User.get_by_username(username)
+    user = model.User.get_by_username(username)
     if user.check_password(password):
-        return UserAuth().dump(user)
+        dump = schema.User().dump(user)
+        dump['access_token'] = create_access_token(identity=username)
+        return dump
     else:
         raise NotImplementedError() # TODO

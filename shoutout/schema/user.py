@@ -2,11 +2,10 @@ from marshmallow import (
     Schema,
     fields,
 )
-from flask_jwt_extended import create_access_token
 
 
-class UserAuth(Schema):
-
+class User(Schema):
+    
     username = fields.Str(
         required=True,
         error_messages={'required': 'Username is required.'}
@@ -16,7 +15,13 @@ class UserAuth(Schema):
         required=True,
         error_messages={'required': 'Password is required.'}
     )
-    token = fields.Function(
-        dumps_only=True,
-        serialize=lambda user: create_access_token(identity=user.username)
+    comments = fields.Nested(
+        'Comment',
+        many=True,
+        dump_only=True
+    )
+    articles = fields.Nested(
+        'Article',
+        many=True,
+        dump_only=True
     )

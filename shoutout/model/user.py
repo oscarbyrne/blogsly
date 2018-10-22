@@ -9,9 +9,11 @@ from shoutout.extensions import (
 class User(db.Model):
     __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
     _password = db.Column(db.String(128), nullable=False)
+    articles = db.relationship('Article', back_populates='author')
+    comments = db.relationship('Comment', back_populates='author')
     
     @hybrid_property
     def password(self):

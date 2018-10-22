@@ -4,8 +4,8 @@ from flask_restplus import (
 )
 from webargs.flaskparser import use_kwargs
 
-import shoutout.schema.auth as schema
-import shoutout.service.auth as service
+from shoutout import schema
+from shoutout import service
 
 
 api = Namespace('auth')
@@ -14,7 +14,7 @@ api = Namespace('auth')
 @api.route('/register')
 class Register(Resource):
 
-    @use_kwargs(schema.UserAuth)
+    @use_kwargs(schema.User)
     def post(self, **kwargs):
         return service.register(**kwargs)
 
@@ -22,6 +22,6 @@ class Register(Resource):
 @api.route('/login')
 class Login(Resource):
 
-    @use_kwargs(schema.UserAuth)
+    @use_kwargs(schema.User)
     def post(self, **kwargs):
         return service.login(**kwargs)
