@@ -1,4 +1,4 @@
-from shoutout.extensions import db
+from blogsly.extensions import db
 
 
 class Article(db.Model):

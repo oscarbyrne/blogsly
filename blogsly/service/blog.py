@@ -3,9 +3,9 @@ from flask_jwt_extended import (
     get_jwt_identity,
 )
 
-from shoutout import model
-from shoutout.extensions import db
-from shoutout import schema
+from blogsly import model
+from blogsly.extensions import db
+from blogsly import schema
 
 
 @jwt_required

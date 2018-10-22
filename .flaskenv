@@ -1,1 +1,1 @@
-FLASK_APP=shoutout
+FLASK_APP=blogsly

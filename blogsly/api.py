@@ -4,11 +4,11 @@ from flask_restplus import Api
 import flask_jwt_extended.exceptions as jwt_extended_exception
 import jwt.exceptions as jwt_exception
 
-from shoutout import controller
+from blogsly import controller
 
 
 api = Api(
-    title='shoutout',
+    title='blogsly',
     version='1.0',
 )
 

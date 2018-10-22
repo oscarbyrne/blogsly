@@ -2,9 +2,9 @@ from os import environ
 
 from flask import Flask
 
-from shoutout.extensions import *
+from blogsly.extensions import *
 
-from shoutout import api
+from blogsly import api
 
 
 def create_app():

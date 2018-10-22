@@ -1,8 +1,8 @@
 from flask_jwt_extended import create_access_token
 
-from shoutout import model
-from shoutout.extensions import db
-from shoutout import schema
+from blogsly import model
+from blogsly.extensions import db
+from blogsly import schema
 
 
 def register(username, password):

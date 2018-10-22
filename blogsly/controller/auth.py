@@ -4,8 +4,8 @@ from flask_restplus import (
 )
 from webargs.flaskparser import use_kwargs
 
-from shoutout import schema
-from shoutout import service
+from blogsly import schema
+from blogsly import service
 
 
 api = Namespace('auth')

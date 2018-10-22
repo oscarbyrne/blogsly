@@ -1,6 +1,6 @@
 from sqlalchemy.ext.hybrid import hybrid_property
 
-from shoutout.extensions import (
+from blogsly.extensions import (
     db,
     bcrypt,
 )
