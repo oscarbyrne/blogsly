@@ -16,6 +16,7 @@ echo BLOGSLY_SECRET_KEY=$YOURSECRETPHRASE > .env
 make build
 make run
 ```
+The API will now be running in a docker container serving on port 5000
 
 ## Built With
 - [Flask](http://flask.pocoo.org/) - A lightweight web framework
