@@ -22,6 +22,7 @@ make run
 - [Flask-JWT-Extended](https://flask-jwt-extended.readthedocs.io/en/latest/) - For stateless authentication via JWT
 - [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.3/) - ORM layer
 - [Flask-Marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/) - For object serialization/deserialization
+- [Generic Docker Makefile](https://github.com/ekalinin/github-markdown-toc) - For docker image management
 
 
 ## API
