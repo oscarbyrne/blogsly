@@ -1,43 +1,14 @@
-# blogsly
-simple blogging api with flask
+# API
 
+## Register User
 
-## Getting Started
-
-### Prerequisites
-
-- `make`
-- `docker`
-
-### Deployment
-
-```bash
-echo BLOGSLY_SECRET_KEY=$YOURSECRETPHRASE > .env
-make build
-make run
-```
-The API will now be running in a docker container serving on port 5000
-
-## Built With
-- [Flask](http://flask.pocoo.org/) - A lightweight web framework
-- [Flask-RESTPlus](https://flask-restplus.readthedocs.io/en/stable/) - For creating REST APIs
-- [Flask-JWT-Extended](https://flask-jwt-extended.readthedocs.io/en/latest/) - For stateless authentication via JWT
-- [Flask-SQLAlchemy](http://flask-sqlalchemy.pocoo.org/2.3/) - ORM layer
-- [Flask-Marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/) - For object serialization/deserialization
-- [Generic Docker Makefile](https://github.com/ekalinin/github-markdown-toc) - For docker image management
-
-
-## API
-
-### Register User
-
-#### url
+### Url
 `/auth/register`
 
-#### method
+### Method
 POST
 
-#### Data Params
+### Data Params
 example:
 ```json
 {
@@ -46,7 +17,7 @@ example:
 }
 ```
 
-#### Response
+### Response
 success:
 ```json
 {
@@ -57,15 +28,15 @@ success:
 }
 ```
 
-### Sign in with User
+## Sign in with User
 
-#### url
+### Url
 `/auth/login`
 
-#### method
+### Method
 POST
 
-#### Data Params
+### Data Params
 example:
 ```json
 {
@@ -74,7 +45,7 @@ example:
 }
 ```
 
-#### Response
+### Response
 success:
 ```json
 {
@@ -86,18 +57,18 @@ success:
 ```
 
 
-### Create Article
+## Create Article
 
-#### url
+### Url
 `/articles`
 
-#### method
+### Method
 POST
 
 ### Headers
 - `Authorization`: `Bearer MYREALLYLONGACCESSTOKEN`
 
-#### Data Params
+### Data Params
 example:
 ```json
 {
@@ -106,7 +77,7 @@ example:
 }
 ```
 
-#### Response
+### Response
 success:
 ```json
 {
@@ -118,18 +89,18 @@ success:
 }
 ```
 
-### Create Comment
+## Create Comment
 
-#### url
+### Url
 `/articles/<id:article>/comments`
 
-#### method
+### Method
 POST
 
 ### Headers
 - `Authorization`: `Bearer MYREALLYLONGACCESSTOKEN}`
 
-#### Data Params
+### Data Params
 example:
 ```json
 {
@@ -137,7 +108,7 @@ example:
 }
 ```
 
-#### Response
+### Response
 success:
 ```json
 {
@@ -147,15 +118,15 @@ success:
 }
 ```
 
-### Read Articles
+## Read Articles
 
-#### url
+### Url
 `/articles`
 
-#### method
+### Method
 GET
 
-#### Data Params
+### Data Params
 example:
 ```json
 {
@@ -164,7 +135,7 @@ example:
 }
 ```
 
-#### Response
+### Response
 success:
 ```json
 [
@@ -189,4 +160,3 @@ success:
     }
 ]
 ```
-
